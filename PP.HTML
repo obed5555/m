@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Icônes -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #152A65; /* Nouveau fond bleu foncé */
+            color: white;
+        }
+
+        /* Entête */
+        header {
+            background-color: #152A65; /* Fond bleu foncé */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-left i, .header-right i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .language {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .circle-btn {
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .circle-btn:hover {
+            background-color: darkorange;
+            transform: scale(1.05);
+        }
+
+        .rectangle {
+            background-color: white;
+            width: 80%;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .rectangle h2 {
+            color: #152A65; /* Bleu foncé pour les titres */
+        }
+
+        /* Historique des transactions */
+        .history {
+            background-color: white;
+            width: 80%;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .history h2 {
+            color: #152A65;
+            margin-bottom: 20px;
+        }
+
+        .history table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .history table th, .history table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .history table th {
+            background-color: #152A65;
+            color: white;
+        }
+
+        .history table td {
+            background-color: #f4f4f4;
+            color: black;
+        }
+
+        /* Styles responsive */
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 10px;
+            }
+
+            .button-container {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .circle-btn {
+                width: 80px;
+                height: 80px;
+                font-size: 16px;
+            }
+
+            .history, .rectangle {
+                width: 95%;
+            }
+
+            .header-left, .header-right {
+                gap: 10px;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Nouveau style pour le texte "Helo Obed" */
+        .hello-obed {
+            font-size: 17px;
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <i class="fas fa-bell"></i> <!-- Icône de notification -->
+            <i class="fas fa-comment-dots"></i> <!-- Icône de message -->
+        </div>
+        <div class="header-right">
+            <div class="language">
+                Langue:
+                <select id="language-selector">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+            <i class="fas fa-cog"></i> <!-- Icône de paramètres -->
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <!-- Texte "Helo Obed" -->
+        <div class="hello-obed">Hello Obed</div>
+
+        <div class="button-container">
+            <a href="page3.html"><button class="circle-btn">Unité</button></a>
+            <button class="circle-btn">Internet</button>
+            <button class="circle-btn">Minutes</button>
+        </div>
+
+        <div class="rectangle">
+            <h2>Notification</h2>
+            <p>Aucune notification pour le moment.</p>
+        </div>
+
+        <div class="history">
+            <h2>Historique des Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Service</th>
+                        <th>Montant</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Langue
+        const languageSelector = document.getElementById("language-selector");
+
+        languageSelector.addEventListener("change", function() {
+            alert("Langue changée !");
+        });
+    </script>
+</body>
+</html>

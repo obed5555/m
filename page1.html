@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrer le code de vérification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #152A65;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0 1rem 1.5rem;
+            line-height: 1.5;
+        }
+
+
+        .inputs-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.5rem;
+            border: 2px solid white;
+            border-radius: 8px;
+            background-color: transparent;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .footer {
+            font-size: 0.8rem;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .footer small {
+            font-size: 0.7rem;
+            text-align: right;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            input {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1rem;
+            }
+
+            input {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <script>
+        function handleInput(event, index) {
+            const inputs = document.querySelectorAll('.code-input');
+
+            if (event.target.value.length === 1 && index < inputs.length - 1) {
+                inputs[index + 1].focus();
+            }
+
+            if (event.target.value.length === 0 && index > 0) {
+                inputs[index - 1].focus();
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const inputs = document.querySelectorAll('.code-input');
+            const code = Array.from(inputs).map(input => input.value).join('');
+
+            if (code.length === 5) {
+                alert(`Code entré : ${code}`);
+            } else {
+                alert('Veuillez entrer un code complet de 5 chiffres.');
+            }
+        }
+    </script>
+</head>
+
+<body><h1>Saisissez le code que nous <br> avons envoyé sur votre numéro</h1>
+
+    <h1>Vérification du Code</h1>
+    <form onsubmit="handleSubmit(event)">
+        <div class="inputs-container">
+            <input type="text" class="code-input" maxlength="1" oninput="handleInput(event, 0)" />
+            <input type="text" class="code-input" maxlength="1" oninput="handleInput(event, 1)" />
+            <input type="text" class="code-input" maxlength="1" oninput="handleInput(event, 2)" />
+            <input type="text" class="code-input" maxlength="1" oninput="handleInput(event, 3)" />
+            <input type="text" class="code-input" maxlength="1" oninput="handleInput(event, 4)" />
+        </div> 
+         <div class="footer">
+        <small>Code non reçu ?</small>
+    </div>
+        <a href="PP.html" class="button">Suivant</a>
+    </form>
+    
+  
+</body>
+
+</html>

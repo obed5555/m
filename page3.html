@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achat d'Unité</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Icônes -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #152A65; /* Bleu foncé */
+            color: white;
+        }
+
+        /* Entête */
+        header {
+            background-color: #152A65; /* Bleu foncé */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .header-center {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Contenu principal */
+        .content {
+            padding: 20px;
+        }
+
+        .rectangles-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Réduit l'espace entre les rectangles */
+        }
+
+        .rectangle {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #152A65;
+            width: 80%; /* Réduit la largeur des rectangles */
+            margin: 0 auto; /* Centrer les rectangles */
+        }
+
+        .rectangle img {
+            width: 40px;  /* Taille plus petite de l'image */
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px; /* Espace entre l'image et le texte */
+        }
+
+        .rectangle h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .rectangle .service-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #152A65;
+        }
+
+        /* Ajout du texte en bas */
+        .bottom-text {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            margin-top: 30px; /* Espacement au-dessus du texte */
+        }
+
+        /* Styles responsives */
+        @media (max-width: 768px) {
+            .rectangles-container {
+                gap: 10px;
+            }
+
+            .rectangle {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            .rectangle img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="PP.html"><i class="fas fa-arrow-left"></i></a> <!-- Icône de fleche retour -->
+        </div>
+        <div class="header-center">
+            Achat d'Unité
+        </div>
+        <div class="header-right">
+            <!-- Icône de paramètres, si nécessaire -->
+        </div>
+    </header>
+    <div class="bottom-text">
+            Depuis quel réseau <br> voulez-vous acheter des Unités ?
+        </div>
+
+    <div class="content">
+        <div class="rectangles-container">
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/50x50/0000FF/808080?Text=Wave" alt="Wave">
+                <h3 class="service-name">Wave</h3>
+            </div>
+
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/50x50/FF7F00/FFFFFF?Text=Orange" alt="Orange">
+                <h3 class="service-name">Orange</h3>
+            </div>
+
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/50x50/FFD700/FFFFFF?Text=MTN" alt="MTN">
+                <h3 class="service-name">MTN</h3>
+            </div>
+
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/50x50/00BFFF/FFFFFF?Text=Moov" alt="Moov">
+                <h3 class="service-name">Moov</h3>
+            </div>
+        </div>
+
+        <!-- Texte en bas -->
+        
+    </div>
+
+</body>
+</html>
