@@ -110,31 +110,7 @@
             }
         }
     </style>
-    <script>
-        function handleInput(event, index) {
-            const inputs = document.querySelectorAll('.code-input');
-
-            if (event.target.value.length === 1 && index < inputs.length - 1) {
-                inputs[index + 1].focus();
-            }
-
-            if (event.target.value.length === 0 && index > 0) {
-                inputs[index - 1].focus();
-            }
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            const inputs = document.querySelectorAll('.code-input');
-            const code = Array.from(inputs).map(input => input.value).join('');
-
-            if (code.length === 5) {
-                alert(`Code entré : ${code}`);
-            } else {
-                alert('Veuillez entrer un code complet de 5 chiffres.');
-            }
-        }
-    </script>
+   
 </head>
 
 <body><h1>Saisissez le code que nous <br> avons envoyé sur votre numéro</h1>
@@ -151,7 +127,7 @@
          <div class="footer">
         <small>Code non reçu ?</small>
     </div>
-        <a href="PP.html" class="button">Suivant</a>
+        <a href="PP.HTML" class="button">Suivant</a>
     </form>
     
   
